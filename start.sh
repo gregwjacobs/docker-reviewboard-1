@@ -25,7 +25,7 @@ if [[ ! -d /var/www/reviewboard ]]; then
     rb-site install --noinput \
         --domain-name="$DOMAIN" \
         --site-root=/ --static-url=static/ --media-url=media/ \
-        --db-type=postgresql \
+        --db-type=mysql \
         --db-name="$PGDB" \
         --db-host="$PGHOST" \
         --db-user="$PGUSER" \

@@ -1,11 +1,12 @@
 FROM debian:wheezy
-MAINTAINER igor.katson@gmail.com
+MAINTAINER gregwjacobs@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-RUN apt-get install -y python-pip python-dev python-psycopg2 git subversion mercurial python-svn
-
+RUN apt-get install -y python-pip python-dev python-psycopg2 git subversion mercurial python-svn patch
+RUN apt-get install -y build-dep python-imaging
+RUN apt-get install -y python-setuptools
 RUN easy_install reviewboard
 
 RUN pip install -U uwsgi
